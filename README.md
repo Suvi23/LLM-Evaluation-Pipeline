@@ -161,8 +161,8 @@ If processing **millions of conversations per day**:
 ```json
 [
   {
-    "chat_file": "sample-chat-conversation-01.json",
-    "context_file": "sample_context_vectors-01.json",
+    "chat_file": "sample-chat-conversation-01 (3).json",
+    "context_file": "sample_context_vectors-01 (2).json",
     "evaluation_result": {
       "relevance_and_completeness": {
         "relevance_score": 0.718,
@@ -172,8 +172,24 @@ If processing **millions of conversations per day**:
         "max_context_similarity": 0.575,
         "hallucination_detected": true
       },
-      "latency_seconds": 0.567,
+      "latency_seconds": 0.706,
       "estimated_cost_usd": 0.0003
+    }
+  },
+  {
+    "chat_file": "sample-chat-conversation-02 (3).json",
+    "context_file": "sample_context_vectors-02 (2).json",
+    "evaluation_result": {
+      "relevance_and_completeness": {
+        "relevance_score": 0.343,
+        "completeness_score": 0.046
+      },
+      "hallucination_check": {
+        "max_context_similarity": 0.237,
+        "hallucination_detected": true
+      },
+      "latency_seconds": 0.491,
+      "estimated_cost_usd": 0.00036
     }
   }
 ]
