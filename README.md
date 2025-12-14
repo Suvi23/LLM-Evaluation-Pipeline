@@ -2,6 +2,8 @@
 
 This project implements a comprehensive evaluation pipeline for AI-generated responses in chat conversations. It checks **relevance**, **completeness**, and **hallucination**, while also tracking **latency** and **estimated cost** for each evaluation.
 
+Chat JSON: Full coversation between user and AI
+Context JSON: Relevant context chunks retrieved from a vector database for the user's latest query.
 
 
 ## **Table of Contents**
@@ -117,12 +119,16 @@ The pipeline consists of the following steps:
    * Fallback mechanisms in context extraction ensure the pipeline does not fail if some fields are missing.
    * Cosine similarity with embeddings is efficient and widely used for semantic comparisons.
    * Explicit latency and cost tracking makes it suitable for operational monitoring.
+   * No external API calls
+   * Easy  to scale horizontally
+   * Lightweight embedding model(miniLM)
 
 2. **Why not other approaches?**
 
    * Avoided full LLM-based evaluation for relevance/completeness to reduce API calls, latency, and costs.
    * Avoided naive keyword matching because it does not capture semantic meaning.
    * Modular structure allows easy replacement of embedding models or thresholds.
+   * Non-detrministic results and poor scalibility
 
 
 ## **Scalability Considerations**
@@ -172,5 +178,6 @@ If processing **millions of conversations per day**:
   }
 ]
 ```
+
 
 
